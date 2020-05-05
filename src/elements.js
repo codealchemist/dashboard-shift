@@ -1,66 +1,76 @@
 import styled from 'styled-components'
 
 export const Gap = styled.div`
-    margin: 10px;
-    width: calc(100% - 20px);
-    height: calc(100% - 20px);
-    position: absolute;
-    left: 0;
-    top: 0;
+  margin: 10px;
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
+  position: absolute;
+  left: 0;
+  top: 0;
 `
 
 export const Dashboard = styled.div`
-    display: grid;
-    width: 100%;
-    height: 100%;
-    gap: 20px;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  gap: 20px;
 
-    ${({rows, cols}) => {
-        let output = ''
-        if (rows) output += `grid-template-rows: ${'1fr '.repeat(rows)};`
-        if (cols) output += `grid-template-columns: ${'1fr '.repeat(cols)};`
-        return output
-    }}
+  ${({ rows, cols }) => {
+    let output = ''
+    if (rows) output += `grid-template-rows: ${'1fr '.repeat(rows)};`
+    if (cols) output += `grid-template-columns: ${'1fr '.repeat(cols)};`
+    return output
+  }}
 `
 
 export const WidgetContainer = styled.div`
-    display: flex;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 
-    ${({background}) => {
-        if (background) {
-            return `
+  ${({ background }) => {
+    if (background) {
+      return `
                 background: ${background};
             `
-        }
-    }}
+    }
+  }}
 
-    ${({rows, cols}) => {
-        let output = ''
-        if (rows) output += `grid-row: span ${rows};`
-        if (cols) output += `grid-column: span ${cols};`
-        return output
-    }}
+  ${({ rows, cols }) => {
+    let output = ''
+    if (rows) output += `grid-row: span ${rows};`
+    if (cols) output += `grid-column: span ${cols};`
+    return output
+  }}
 `
 
 export const WidgetContent = styled.div`
-    display: flex;
-    width: 100%;
-    padding: 20px;
-    align-items: center;
-    justify-content: center;
-    font-size: 10em;
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  font-size: 10em;
 `
 
 export const Text = styled.div`
-    font-size: 2em;
-    margin: 0;
+  font-size: 2em;
+  margin: 0;
 
-    ${({color}) => {
-        if (color) return `
-            color: ${color};
-        `
-    }}
+  ${({ color, size }) => {
+    let output = ''
+    if (color) output += `color: ${color} !important;`
+    if (size) output += `font-size: ${size}em;`
+    return output
+  }}
+`
+
+export const Blur = styled.div`
+  filter: blur(1px);
+
+  ${({ value }) => {
+    if (typeof value !== 'number') return
+    return `filter: blur(${value}px);`
+  }}
 `

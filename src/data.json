@@ -1,0 +1,58 @@
+{
+  "businessTime": {
+    "open": 7,
+    "close": 17.5
+  },
+  "rooms": [
+    {
+      "id": 1,
+      "name": "Room 1",
+      "label": "Under 5",
+      "shifts": [
+        {
+          "name": "A",
+          "startTime": 7,
+          "endTime": 17.5,
+          "color": "red"
+        },
+        {
+          "name": "B",
+          "startTime": 7,
+          "endTime": 17.5,
+          "color": "blue"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Room 2",
+      "label": "Over 5",
+      "shifts": [
+        {
+          "name": "A",
+          "startTime": 7,
+          "endTime": 12,
+          "color": "red"
+        },
+        {
+          "name": "B",
+          "startTime": 12,
+          "endTime": 17.5,
+          "color": "blue"
+        },
+        {
+          "name": "C",
+          "startTime": 7,
+          "endTime": 12,
+          "color": "yellow"
+        },
+        {
+          "name": "D",
+          "startTime": 12,
+          "endTime": 17.5,
+          "color": "green"
+        }
+      ]
+    }
+  ]
+}
