@@ -58,10 +58,14 @@ export const Text = styled.div`
   font-size: 2em;
   margin: 0;
 
-  ${({ color, size }) => {
+  ${({ color, size, bottom, top, light, bold }) => {
     let output = ''
     if (color) output += `color: ${color} !important;`
     if (size) output += `font-size: ${size}em;`
+    if (bottom) output += `position: absolute; bottom: 10px;`
+    if (top) output += `position: absolute; top: 10px;`
+    if (light) output += `font-weight: 300;`
+    if (bold) output += `font-weight: 700;`
     return output
   }}
 `
@@ -73,4 +77,9 @@ export const Blur = styled.div`
     if (typeof value !== 'number') return
     return `filter: blur(${value}px);`
   }}
+`
+
+export const Outline = styled.div`
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 `

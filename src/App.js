@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import dayjs from 'dayjs'
 import Clock from 'react-live-clock'
-import { Gap, Dashboard, Text, Blur } from 'elements'
+import { Gap, Dashboard, Text, Blur, Outline } from 'elements'
 import Widget from 'components/Widget'
 import data from 'data'
 
@@ -85,8 +85,13 @@ const App = () => {
           if (!shift) {
             return (
               <Widget key={id} cols="2" background="#333">
-                <Text color="black">{id}</Text>
+                <Text color="black" bold>
+                  {id}
+                </Text>
                 <Text color="#222">…</Text>
+                <Text size="0.5" color="#777" bottom light>
+                  {label}
+                </Text>
               </Widget>
             )
           }
@@ -94,8 +99,15 @@ const App = () => {
           // Open.
           return (
             <Widget key={id} cols="2" background={shift.color}>
-              <Text color="black">{id}</Text>
-              <Text>{shift.name}</Text>
+              <Text color="black" bold>
+                {id}
+              </Text>
+              <Outline>
+                <Text bold>{shift.name}</Text>
+              </Outline>
+              <Text size="0.5" color="#aaa" bottom light>
+                {label}
+              </Text>
             </Widget>
           )
         })}
