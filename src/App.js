@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Clock from 'react-live-clock'
+import { Gap, Dashboard, Text } from 'elements'
+import Widget from 'components/Widget'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Gap>
+      <Dashboard rows="2" cols="4">
+        <Widget cols="4">
+          <Clock format={'HH:mm'} ticking={true} timezone={'US/Pacific'} />
+        </Widget>
+
+        <Widget cols="2"  background="red">
+          <Text color="black">1</Text>
+          <Text>A</Text>
+        </Widget>
+
+        <Widget cols="2" background="blue">
+          <Text color="black">1</Text>
+          <Text>A</Text>
+        </Widget>
+      </Dashboard>
+    </Gap>
+  )
 }
 
-export default App;
+export default App
