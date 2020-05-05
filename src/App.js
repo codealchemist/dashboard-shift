@@ -5,13 +5,36 @@ import { Gap, Dashboard, Text, Blur } from 'elements'
 import Widget from 'components/Widget'
 import data from 'data'
 
+const usedShifts = {}
+const skippedShifts = {}
 const getShift = ({ roomId, shifts, time }) => {
   let selectedShift = null
+  usedShifts[roomId] = usedShifts[roomId] || new Set()
+  skippedShifts[roomId] = skippedShifts[roomId] || new Set()
   shifts.some((currentShift) => {
     if (time < currentShift.startTime || time > currentShift.endTime) {
+      // Ended shift.
+      if (usedShifts[roomId].has(currentShift)) {
+        console.log('ENDED', time, currentShift)
+        skippedShifts[roomId].add(currentShift)
+      }
       return false
     }
 
+    // Rotate.
+    if (skippedShifts[roomId].size === shifts.length) {
+      console.log('-- ROTATE --')
+      skippedShifts[roomId].clear()
+      usedShifts[roomId].clear()
+    }
+
+    if (skippedShifts[roomId].has(currentShift)) {
+      console.log('SKIPPED', time, currentShift)
+      return false
+    }
+
+    // Matched shift.
+    usedShifts[roomId].add(currentShift)
     selectedShift = currentShift
     return true
   })
@@ -38,10 +61,6 @@ const App = () => {
     return () => clearInterval(interval)
   }, [date])
 
-  useEffect(() => {
-    console.log('DATE', date)
-  }, [date])
-
   return (
     <Gap>
       <Dashboard rows="2" cols="4">
@@ -61,7 +80,6 @@ const App = () => {
           const { id, name, label, shifts } = room
           const time = getTime(date)
           const shift = getShift({ roomId: id, shifts, time })
-          console.log('SHIFT', shift)
 
           // Closed.
           if (!shift) {
