@@ -15,7 +15,6 @@ const getShift = ({ roomId, shifts, time }) => {
     if (time < currentShift.startTime || time > currentShift.endTime) {
       // Ended shift.
       if (usedShifts[roomId].has(currentShift)) {
-        console.log('ENDED', time, currentShift)
         skippedShifts[roomId].add(currentShift)
       }
       return false
@@ -23,13 +22,11 @@ const getShift = ({ roomId, shifts, time }) => {
 
     // Rotate.
     if (skippedShifts[roomId].size === shifts.length) {
-      console.log('-- ROTATE --')
       skippedShifts[roomId].clear()
       usedShifts[roomId].clear()
     }
 
     if (skippedShifts[roomId].has(currentShift)) {
-      console.log('SKIPPED', time, currentShift)
       return false
     }
 
