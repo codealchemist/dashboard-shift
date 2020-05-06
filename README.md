@@ -1,68 +1,34 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# dashboard-shift
 
-## Available Scripts
+Small dashboard with two rooms with shifting turns.
 
-In the project directory, you can run:
+![screenshot](https://cldup.com/rvpay77rBe.gif)
 
-### `npm start`
+## Challenge
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+You’ve been hired to create a basic dashboard for a local daycare which displays current staff shifts. The details for the shifts are below:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- The business opens at 7 AM and closes at 5:30.
+- Room 1 is for children under 5.
+- Room 2 is for children over 5.
+- Room 1 has two shifts which alternate days. For example, Monday, December 17th is an A day and the 18th is a B day.
+- Room 2 has 4 shifts which alternate days and change throughout the day. Shift A goes from 7 AM to noon on December 17th, at which point the schedule switches to B until close. The 18th follows the same schedule but with shifts C and D.
+- The shifts are color coded. Shift A is red, B is blue, C is yellow, and D is green.
+  Dashboard requirements:
+- The dashboard should display the current shift and should update without the page needing to be reloaded.
+- Design the dashboard to be displayed on TV’s placed throughout the daycare.
+- You may use any dependencies you deem applicable.
 
-### `npm test`
+## Run
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+First, ensure you're using the required NodeJS version:
 
-### `npm run build`
+`nvm use`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Install all required dependencies:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+`npm i`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Start the app:
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+`npm start`
