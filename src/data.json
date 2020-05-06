@@ -11,12 +11,14 @@
       "shifts": [
         {
           "name": "A",
+          "person": "Dr. Milstein",
           "startTime": 7,
           "endTime": 17.5,
           "color": "red"
         },
         {
           "name": "B",
+          "person": "Dr. Lister",
           "startTime": 7,
           "endTime": 17.5,
           "color": "blue"
@@ -30,24 +32,28 @@
       "shifts": [
         {
           "name": "A",
+          "person": "Dr. Flemming",
           "startTime": 7,
           "endTime": 12,
           "color": "red"
         },
         {
           "name": "B",
+          "person": "Dr. Pasteur",
           "startTime": 12,
           "endTime": 17.5,
           "color": "blue"
         },
         {
           "name": "C",
+          "person": "Dr. Baltar",
           "startTime": 7,
           "endTime": 12,
           "color": "yellow"
         },
         {
           "name": "D",
+          "person": "Dr. Who",
           "startTime": 12,
           "endTime": 17.5,
           "color": "green"

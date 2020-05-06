@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import dayjs from 'dayjs'
-import Clock from 'react-live-clock'
-import { Gap, Dashboard, Text, Blur, Outline } from 'elements'
+import { BsFillPersonFill } from 'react-icons/bs'
+import { Gap, Dashboard, Text, Blur, Outline, Label } from 'elements'
 import Widget from 'components/Widget'
 import data from 'data'
 
@@ -64,6 +64,7 @@ const App = () => {
   return (
     <Gap>
       <Dashboard rows="2" cols="4">
+        {/* CLOCK */}
         <Widget cols="4">
           <Gap>
             <Text size="0.35" color="#363f48">
@@ -76,6 +77,7 @@ const App = () => {
           </Blur>
         </Widget>
 
+        {/* ROOMS */}
         {data.rooms.map((room) => {
           const { id, name, label, shifts } = room
           const time = getTime(date)
@@ -99,6 +101,10 @@ const App = () => {
           // Open.
           return (
             <Widget key={id} cols="2" background={shift.color}>
+              <Label>
+                <BsFillPersonFill />
+                <span>{shift.person}</span>
+              </Label>
               <Text color="black" bold>
                 {id}
               </Text>

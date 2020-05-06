@@ -46,19 +46,30 @@ export const WidgetContainer = styled.div`
 `
 
 export const WidgetContent = styled.div`
+  position: relative;
   display: flex;
   width: 100%;
   padding: 20px;
   align-items: center;
   justify-content: center;
   font-size: 10em;
+  overflow: hidden;
 `
 
 export const Text = styled.div`
   font-size: 2em;
   margin: 0;
+  display: flex;
+  align-items: center;
 
-  ${({ color, size, bottom, top, light, bold }) => {
+  span {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  ${({ color, size, bottom, top, light, bold, wrap }) => {
     let output = ''
     if (color) output += `color: ${color} !important;`
     if (size) output += `font-size: ${size}em;`
@@ -66,8 +77,29 @@ export const Text = styled.div`
     if (top) output += `position: absolute; top: 10px;`
     if (light) output += `font-weight: 300;`
     if (bold) output += `font-weight: 700;`
+    if (wrap) output += `width: 100%;`
     return output
   }}
+`
+
+export const Label = styled.div`
+  font-size: 0.5em;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: calc(100% - 20px);
+  color: rgba(0, 0, 0, 0.75);
+  font-weight: 300;
+
+  span {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 `
 
 export const Blur = styled.div`

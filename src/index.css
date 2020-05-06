@@ -24,6 +24,6 @@ code {
 
 @media screen and (orientation: landscape) {
   body {
-    font-size: 1vh;
+    font-size: 1.2vh;
   }
 }
