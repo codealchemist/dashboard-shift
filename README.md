@@ -4,6 +4,10 @@ Small dashboard with two rooms with shifting turns.
 
 ![screenshot](https://cldup.com/rvpay77rBe.gif)
 
+## Live demo
+
+[https://dashboard-shift.netlify.app](https://dashboard-shift.netlify.app)
+
 ## Challenge
 
 You’ve been hired to create a basic dashboard for a local daycare which displays current staff shifts. The details for the shifts are below:
